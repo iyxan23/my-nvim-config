@@ -12,6 +12,6 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.recipes.herline-mode-text-statusline" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   -- import/override with your plugins folder
 }
