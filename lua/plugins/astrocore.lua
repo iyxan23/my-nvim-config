@@ -65,45 +65,78 @@ return {
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         ["<Leader><Leader>w"] = {
-          function()
-            vim.cmd.HopWordAC()
-          end,
-          desc = "Hop Words After"
+          function() vim.cmd.HopWordAC() end,
+          desc = "Hop Words After",
         },
         ["<Leader><Leader>b"] = {
-          function()
-            vim.cmd.HopWordBC()
-          end,
-          desc = "Hop Words Behind"
+          function() vim.cmd.HopWordBC() end,
+          desc = "Hop Words Behind",
         },
         ["<Leader><Leader>k"] = {
-          function()
-            vim.cmd.HopLineBC()
-          end,
-          desc = "Hop Lines Before Cursor"
+          function() vim.cmd.HopLineBC() end,
+          desc = "Hop Lines Before Cursor",
         },
         ["<Leader><Leader>j"] = {
-          function()
-            vim.cmd.HopLineAC()
-          end,
-          desc = "Hop Lines After Cursor"
+          function() vim.cmd.HopLineAC() end,
+          desc = "Hop Lines After Cursor",
         },
+
         ["<Leader>c"] = {
           function()
             local bufs = vim.fn.getbufinfo { buflisted = true }
-            require("astronvim.utils.buffer").close(0)
-            if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+            require("astrocore.buffer").close(vim.api.nvim_get_current_buf())
+            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
           end,
           desc = "Close buffer",
         },
 
-        ["<Leader>t2f"] = { "<cmd>ToggleTerm 2 direction=float name=second<cr>", desc = "ToggleTerm second terminal float" },
-        ["<Leader>t2h"] = { "<cmd>ToggleTerm 2 size=10 direction=horizontal name=second<cr>", desc = "ToggleTerm second terminal horizontal split" },
-        ["<Leader>t2v"] = { "<cmd>ToggleTerm 2 size=80 direction=vertical name=second<cr>", desc = "ToggleTerm second terminal vertical split" },
+        ["<Leader>tf"] = {
+          "<cmd>ToggleTerm 1 direction=float name=first<cr>",
+          desc = "ToggleTerm first terminal float",
+        },
+        ["<Leader>th"] = {
+          "<cmd>ToggleTerm 1 size=10 direction=horizontal name=first<cr>",
+          desc = "ToggleTerm first terminal horizontal split",
+        },
+        ["<Leader>tv"] = {
+          "<cmd>ToggleTerm 1 size=80 direction=vertical name=first<cr>",
+          desc = "ToggleTerm first terminal vertical split",
+        },
 
-        ["<Leader>t3f"] = { "<cmd>ToggleTerm 3 direction=float name=third<cr>", desc = "ToggleTerm third terminal float" },
-        ["<Leader>t3h"] = { "<cmd>ToggleTerm 3 size=10 direction=horizontal name=third<cr>", desc = "ToggleTerm third terminal horizontal split" },
-        ["<Leader>t3v"] = { "<cmd>ToggleTerm 3 size=80 direction=vertical name=third<cr>", desc = "ToggleTerm third terminal vertical split" },
+        ["<Leader>t2f"] = {
+          "<cmd>ToggleTerm 2 direction=float name=second<cr>",
+          desc = "ToggleTerm second terminal float",
+        },
+        ["<Leader>t2h"] = {
+          "<cmd>ToggleTerm 2 size=10 direction=horizontal name=second<cr>",
+          desc = "ToggleTerm second terminal horizontal split",
+        },
+        ["<Leader>t2v"] = {
+          "<cmd>ToggleTerm 2 size=80 direction=vertical name=second<cr>",
+          desc = "ToggleTerm second terminal vertical split",
+        },
+
+        ["<Leader>t3f"] = {
+          "<cmd>ToggleTerm 3 direction=float name=third<cr>",
+          desc = "ToggleTerm third terminal float",
+        },
+        ["<Leader>t3h"] = {
+          "<cmd>ToggleTerm 3 size=10 direction=horizontal name=third<cr>",
+          desc = "ToggleTerm third terminal horizontal split",
+        },
+        ["<Leader>t3v"] = {
+          "<cmd>ToggleTerm 3 size=80 direction=vertical name=third<cr>",
+          desc = "ToggleTerm third terminal vertical split",
+        },
+
+        ["<Leader>fo"] = {
+          function() require("telescope.builtin").oldfiles { cwd_only = true } end,
+          desc = "Find history (cwd only)",
+        },
+        ["<Leader>fi"] = {
+          function() require("telescope.builtin").oldfiles() end,
+          desc = "Find history (everywhere)",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
