@@ -26,9 +26,7 @@ return {
     opts = function()
       local cmp, astro = require "cmp", require "astrocore"
 
-      require("codeium").setup {
-        enable_chat = true,
-      }
+      require("codeium").setup {}
 
       local sources = {
         { name = "codeium", priority = 900 },
@@ -107,80 +105,44 @@ return {
     config = function(...) require "astronvim.plugins.configs.cmp"(...) end,
   },
   {
-    "AstroNvim/astrolsp",
-    optional = true,
-    opts = function(_, opts)
-      local astrocore = require "astrocore"
-      if astrocore.is_available "cmp-nvim-lsp" then
-        opts.capabilities = astrocore.extend_tbl(opts.capabilities, {
-          textDocument = {
-            completion = {
-              completionItem = {
-                documentationFormat = { "markdown", "plaintext" },
-                snippetSupport = true,
-                preselectSupport = true,
-                insertReplaceSupport = true,
-                labelDetailsSupport = true,
-                deprecatedSupport = true,
-                commitCharactersSupport = true,
-                tagSupport = { valueSet = { 1 } },
-                resolveSupport = { properties = { "documentation", "detail", "additionalTextEdits" } },
-              },
-            },
-          },
-        })
-      end
-    end,
+    "onsails/lspkind.nvim",
+    lazy = true,
+    enabled = vim.g.icons_enabled ~= false,
+    opts = {
+      mode = "symbol",
+      symbol_map = {
+        Array = "󰅪",
+        Boolean = "⊨",
+        Class = "󰌗",
+        Constructor = "",
+        Key = "󰌆",
+        Namespace = "󰅪",
+        Null = "NULL",
+        Number = "#",
+        Object = "󰀚",
+        Package = "󰏗",
+        Property = "",
+        Reference = "",
+        Snippet = "",
+        String = "󰀬",
+        TypeParameter = "󰊄",
+        Unit = "",
+        Codeium = "",
+      },
+      menu = {},
+    },
+    config = function(...) require "astronvim.plugins.configs.lspkind"(...) end,
   },
   {
-    "L3MON4D3/LuaSnip",
-    lazy = true,
-    build = vim.fn.has "win32" == 0
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build\n'; make install_jsregexp"
-      or nil,
+    "hrsh7th/nvim-cmp",
     dependencies = {
-      { "rafamadriz/friendly-snippets", lazy = true },
-      {
-        "hrsh7th/nvim-cmp",
-        dependencies = { { "saadparwaiz1/cmp_luasnip", lazy = true } },
-        opts = function(_, opts)
-          local luasnip, cmp = require "luasnip", require "cmp"
-
-          if not opts.snippet then opts.snippet = {} end
-          opts.snippet.expand = function(args) luasnip.lsp_expand(args.body) end
-
-          if not opts.sources then opts.sources = {} end
-          table.insert(opts.sources, { name = "luasnip", priority = 750 })
-
-          if not opts.mappings then opts.mappings = {} end
-          opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            elseif has_words_before() then
-              cmp.complete()
-            else
-              fallback()
-            end
-          end, { "i", "s" })
-          opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" })
-        end,
-      },
+      "onsails/lspkind.nvim",
     },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-      region_check_events = "CursorMoved",
-    },
-    config = function(...) require "astronvim.plugins.configs.luasnip"(...) end,
+    opts = function(_, opts)
+      if require("astrocore").is_available "lspkind.nvim" then
+        if not opts.formatting then opts.formatting = {} end
+        opts.formatting.format = require("lspkind").cmp_format(require("astrocore").plugin_opts "lspkind.nvim")
+      end
+    end,
   },
 }
