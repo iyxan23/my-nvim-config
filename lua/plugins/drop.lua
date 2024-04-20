@@ -4,7 +4,7 @@ return {
   config = function()
     require("drop").setup {
       theme = "stars",
-      max = 20,
+      max = 10,
     }
   end,
 }
