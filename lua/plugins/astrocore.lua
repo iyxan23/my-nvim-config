@@ -89,6 +89,21 @@ return {
           end,
           desc = "Close buffer",
         },
+        ["<Leader>bc"] = {
+          function()
+            require("astroui.status.heirline").buffer_picker(function(bufnr)
+              local bufs = vim.fn.getbufinfo { buflisted = true }
+              require("astrocore.buffer").close(bufnr)
+              if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+            end)
+          end,
+          desc = "Close buffer from tabline",
+        },
+        ["<Leader>bC"] = {
+          function() require("astrocore.buffer").close_all(true) end,
+          desc = "Close all buffers except current",
+        },
+        ["<Leader>bd"] = {},
 
         ["<Leader>tf"] = {
           "<cmd>ToggleTerm 1 direction=float name=first<cr>",
