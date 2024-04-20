@@ -30,6 +30,7 @@ return {
 
       local sources = {
         { name = "codeium", priority = 900 },
+        { name = "luasnip" },
       }
 
       for source_plugin, source in pairs {
