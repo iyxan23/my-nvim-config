@@ -13,5 +13,10 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.motion.nvim-spider" },
+  { import = "astrocommunity.motion.harpoon" },
+  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   -- import/override with your plugins folder
 }

@@ -64,21 +64,19 @@ return {
         -- ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<Leader><Leader>w"] = {
-          function() vim.cmd.HopWordAC() end,
-          desc = "Hop Words After",
-        },
-        ["<Leader><Leader>b"] = {
-          function() vim.cmd.HopWordBC() end,
-          desc = "Hop Words Behind",
-        },
+        --
+          -- replaced by the awesome leap.nvim plugin
+        -- ["<Leader><Leader>w"] = {
+        --   function() vim.cmd.HopWord() end,
+        --   desc = "Hop Words",
+        -- },
         ["<Leader><Leader>k"] = {
-          function() vim.cmd.HopLineBC() end,
-          desc = "Hop Lines Before Cursor",
+          function() vim.cmd.HopLine() end,
+          desc = "Hop Lines",
         },
-        ["<Leader><Leader>j"] = {
-          function() vim.cmd.HopLineAC() end,
-          desc = "Hop Lines After Cursor",
+        ["<Leader><Leader>l"] = {
+          function() vim.cmd.HopLine() end,
+          desc = "Hop Lines",
         },
 
         ["<Leader>c"] = {
@@ -157,6 +155,21 @@ return {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
       },
+      v = {
+        -- ["<Leader><Leader>w"] = {
+        --   function() require('hop').hint_words { extend_visual = true } end,
+        --   desc = "Hop Words",
+        -- },
+        ["<Leader><Leader>k"] = {
+          function() require('hop').hint_lines { extend_visual = true } end,
+          desc = "Hop Lines",
+        },
+        ["<Leader><Leader>l"] = {
+          function() require('hop').hint_lines { extend_visual = true } end,
+          desc = "Hop Lines",
+        },
+
+      }
     },
   },
 }
