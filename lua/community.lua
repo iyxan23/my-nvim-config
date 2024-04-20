@@ -18,5 +18,6 @@ return {
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.media.vim-wakatime" },
   -- import/override with your plugins folder
 }
