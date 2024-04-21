@@ -74,7 +74,7 @@ return {
           function() vim.cmd.HopLine() end,
           desc = "Hop Lines",
         },
-        ["<Leader><Leader>l"] = {
+        ["<Leader><Leader>j"] = {
           function() vim.cmd.HopLine() end,
           desc = "Hop Lines",
         },
@@ -164,7 +164,7 @@ return {
           function() require('hop').hint_lines { extend_visual = true } end,
           desc = "Hop Lines",
         },
-        ["<Leader><Leader>l"] = {
+        ["<Leader><Leader>j"] = {
           function() require('hop').hint_lines { extend_visual = true } end,
           desc = "Hop Lines",
         },
