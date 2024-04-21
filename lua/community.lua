@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.leap-nvim" },
