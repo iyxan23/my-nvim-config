@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
+  { import = "astrocommunity.motion.portal-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.media.vim-wakatime" },
