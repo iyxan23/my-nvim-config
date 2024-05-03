@@ -169,7 +169,12 @@ return {
           function() require('hop').hint_lines { extend_visual = true } end,
           desc = "Hop Lines",
         },
-
+      },
+      i = {
+        ["<C-e>"] = { "<esc><C-e>i", desc = "Go down one line" },
+        ["<C-y>"] = { "<esc><C-y>i", desc = "Go up one line" },
+        ["<C-d>"] = { "<esc><C-d>i", desc = "Go down half a screen" },
+        ["<C-u>"] = { "<esc><C-u>i", desc = "Go up half a screen" },
       }
     },
   },
