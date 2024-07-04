@@ -46,6 +46,10 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+        gr = {
+          function() require('telescope.builtin').lsp_references({}) end,
+          desc = "References of current symbol",
+        },
 
         -- navigate buffer tabs with `H` and `L`
         -- L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
@@ -151,6 +155,11 @@ return {
           function() require("telescope.builtin").oldfiles() end,
           desc = "Find history (everywhere)",
         },
+
+        ["<Leader>bt"] = {
+          "<cmd>if winnr('$') != 1 <Bar> tab split <Bar> endif<CR>",
+          desc = "Something like a fullscreen mode"
+        }
       },
       t = {
         -- setting a mapping to false will disable it
@@ -171,10 +180,10 @@ return {
         },
       },
       i = {
-        ["<C-e>"] = { "<esc><C-e>i", desc = "Go down one line" },
-        ["<C-y>"] = { "<esc><C-y>i", desc = "Go up one line" },
-        ["<C-d>"] = { "<esc><C-d>i", desc = "Go down half a screen" },
-        ["<C-u>"] = { "<esc><C-u>i", desc = "Go up half a screen" },
+        ["<C-e>"] = { "<esc><C-e>a", desc = "Go down one line" },
+        ["<C-y>"] = { "<esc><C-y>a", desc = "Go up one line" },
+        ["<C-d>"] = { "<esc><C-d>a", desc = "Go down half a screen" },
+        ["<C-u>"] = { "<esc><C-u>a", desc = "Go up half a screen" },
       }
     },
   },
