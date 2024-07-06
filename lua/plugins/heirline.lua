@@ -98,19 +98,50 @@ return {
 
     local harpoon_listName = nil
     local harpoon = require "harpoon"
+    local harpoonExtensions = require "harpoon.extensions"
 
     local augroup = vim.api.nvim_create_augroup("Iyxan", {})
 
-    harpoon:extend { ADD = function() vim.cmd.redrawtabline() end }
-    harpoon:extend { REMOVE = function() vim.cmd.redrawtabline() end }
-    harpoon:extend { REPLACE = function() vim.cmd.redrawtabline() end }
+    local onharpoonchange = function()
+      local harpoon_items = require("harpoon"):list(harpoon_listName).items
+
+      -- file path -> harpoon index
+      local mapping = {}
+      for k, v in ipairs(harpoon_items) do
+        mapping[v.value] = k
+      end
+
+      require("astrocore.buffer").sort(function(a, b)
+        local a_path = vim.fn.expand("#" .. a .. ":p:.")
+        local b_path = vim.fn.expand("#" .. b .. ":p:.")
+
+        if mapping[a_path] and not mapping[b_path] then
+          return true
+        elseif not mapping[a_path] and mapping[b_path] then
+          return false
+        elseif mapping[a_path] and mapping[b_path] then
+          return mapping[a_path] < mapping[b_path]
+        end
+
+        -- sort by bufnr by default
+        return a < b
+      end)
+
+      vim.cmd.redrawtabline()
+    end
+
+    harpoon:extend { [harpoonExtensions.event_names.ADD] = onharpoonchange }
+    harpoon:extend { [harpoonExtensions.event_names.REMOVE] = onharpoonchange }
+    harpoon:extend { [harpoonExtensions.event_names.REPLACE] = onharpoonchange }
+    harpoon:extend { [harpoonExtensions.event_names.LIST_CHANGE] = onharpoonchange }
+    harpoon:extend { [harpoonExtensions.event_names.POSITION_UPDATED] = onharpoonchange }
 
     vim.api.nvim_create_autocmd("User", {
       group = augroup,
       pattern = "HarpoonSwitchedList",
       callback = function(event)
         harpoon_listName = event.data
-        vim.cmd.redrawtabline()
+        onharpoonchange()
       end,
     })
 
