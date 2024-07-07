@@ -125,23 +125,39 @@ return {
 
         -- sort by bufnr by default
         return a < b
-      end)
+      end, true)
 
       vim.cmd.redrawtabline()
     end
 
-    harpoon:extend { [harpoonExtensions.event_names.ADD] = onharpoonchange }
-    harpoon:extend { [harpoonExtensions.event_names.REMOVE] = onharpoonchange }
-    harpoon:extend { [harpoonExtensions.event_names.REPLACE] = onharpoonchange }
-    harpoon:extend { [harpoonExtensions.event_names.LIST_CHANGE] = onharpoonchange }
-    harpoon:extend { [harpoonExtensions.event_names.POSITION_UPDATED] = onharpoonchange }
+    vim.api.nvim_create_user_command("IyxanUpdateTabline", function()
+      onharpoonchange()
+    end, { nargs = 0 })
+
+    local function harpoonEvent()
+      vim.cmd("IyxanUpdateTabline")
+    end
+
+    harpoon:extend { [harpoonExtensions.event_names.ADD] = harpoonEvent }
+    harpoon:extend { [harpoonExtensions.event_names.REMOVE] = harpoonEvent }
+    harpoon:extend { [harpoonExtensions.event_names.REPLACE] = harpoonEvent }
+    harpoon:extend { [harpoonExtensions.event_names.LIST_CHANGE] = harpoonEvent }
+    harpoon:extend { [harpoonExtensions.event_names.POSITION_UPDATED] = harpoonEvent }
 
     vim.api.nvim_create_autocmd("User", {
       group = augroup,
       pattern = "HarpoonSwitchedList",
       callback = function(event)
         harpoon_listName = event.data
-        onharpoonchange()
+        vim.cmd("IyxanUpdateTabline")
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("User", {
+      group = augroup,
+      pattern = "AstroBufsUpdated",
+      callback = function()
+        vim.cmd("IyxanUpdateTabline")
       end,
     })
 
