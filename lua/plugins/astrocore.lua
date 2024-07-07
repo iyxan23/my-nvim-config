@@ -46,7 +46,7 @@ return {
       n = {
         -- second key is the lefthand side of the map
         gr = {
-          function() require('telescope.builtin').lsp_references({}) end,
+          function() require("telescope.builtin").lsp_references {} end,
           desc = "References of current symbol",
         },
 
@@ -69,23 +69,23 @@ return {
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         --
-          -- replaced by the awesome leap.nvim plugin
+        -- replaced by the awesome leap.nvim plugin
         -- ["<Leader><Leader>w"] = {
         --   function() vim.cmd.HopWord() end,
         --   desc = "Hop Words",
         -- },
-        ["<Leader><Leader>k"] = {
-          function() vim.cmd.HopLine() end,
-          desc = "Hop Lines",
-        },
-        ["<Leader><Leader>j"] = {
+        -- ["<Leader>k"] = {
+        --   function() vim.cmd.HopLine() end,
+        --   desc = "Hop Lines",
+        -- },
+        ["<Leader>j"] = {
           function() vim.cmd.HopLine() end,
           desc = "Hop Lines",
         },
 
         ["<Leader>c"] = {
           function()
-            local bufs = vim.fn.getbufinfo { buflisted = true }
+            local bufs = vim.fn.getbufinfo { buflisted = 1 }
             require("astrocore.buffer").close(vim.api.nvim_get_current_buf())
             if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
           end,
@@ -94,7 +94,7 @@ return {
         ["<Leader>bc"] = {
           function()
             require("astroui.status.heirline").buffer_picker(function(bufnr)
-              local bufs = vim.fn.getbufinfo { buflisted = true }
+              local bufs = vim.fn.getbufinfo { buflisted = 1 }
               require("astrocore.buffer").close(bufnr)
               if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
             end)
@@ -157,8 +157,8 @@ return {
 
         ["<Leader>bt"] = {
           "<cmd>if winnr('$') != 1 <Bar> tab split <Bar> endif<CR>",
-          desc = "Something like a fullscreen mode"
-        }
+          desc = "Something like a fullscreen mode",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
@@ -169,12 +169,12 @@ return {
         --   function() require('hop').hint_words { extend_visual = true } end,
         --   desc = "Hop Words",
         -- },
-        ["<Leader><Leader>k"] = {
-          function() require('hop').hint_lines { extend_visual = true } end,
-          desc = "Hop Lines",
-        },
-        ["<Leader><Leader>j"] = {
-          function() require('hop').hint_lines { extend_visual = true } end,
+        -- ["<Leader>k"] = {
+        --   function() require("hop").hint_lines { extend_visual = true } end,
+        --   desc = "Hop Lines",
+        -- },
+        ["<Leader>j"] = {
+          function() require("hop").hint_lines { extend_visual = true } end,
           desc = "Hop Lines",
         },
       },
@@ -183,7 +183,7 @@ return {
         ["<C-y>"] = { "<esc><C-y>a", desc = "Go up one line" },
         ["<C-d>"] = { "<esc><C-d>a", desc = "Go down half a screen" },
         ["<C-u>"] = { "<esc><C-u>a", desc = "Go up half a screen" },
-      }
+      },
     },
   },
 }
