@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.dart" },
   { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.debugging.nvim-bqf" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.portal-nvim" },
