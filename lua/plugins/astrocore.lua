@@ -66,6 +66,10 @@ return {
         --   function() vim.cmd.HopLine() end,
         --   desc = "Hop Lines",
         -- },
+        ["<C-j>"] = {
+          "O<esc>o"
+        },
+
         ["<Leader>j"] = {
           function() vim.cmd.HopLine() end,
           desc = "Hop Lines",
