@@ -30,6 +30,8 @@ and mofified a few things to it to make it fit for my own personal use, such as:
    - `<esc>` to `[[<C-\><C-n>]]`
    - `<C-h>`, `<C-j>`, `<C-k>`, and `<C-l>` to just work inside of it
 
+ - [`nvim-early-retirement`](https://github.com/chrisgrieser/nvim-early-retirement) to automatically close tabs that are unused
+
  - `catpuccin-mocha` as default theme
 
  - `AstroNvim/astrolsp`
