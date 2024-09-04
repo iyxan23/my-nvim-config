@@ -6,7 +6,9 @@ and mofified a few things to it to make it fit for my own personal use, such as:
 
  - Global mappings
    - Normal Mode
-     - `<S-j>` to `O<esc>o`
+     - `<S-J>` to `O<esc>o`
+     - `<S-H>` to `^`
+     - `<S-L>` to `$`
      - `<LDR>j` to `:HopLine` with hop.nvim
      - `<LDR>c` to close the current buffer, instead of AstroNvim's `<LDR>bc`
      - `<LDR>bc` to select a buffer to be closed, instead of AstroNvim's `<LDR>bC`
@@ -23,6 +25,8 @@ and mofified a few things to it to make it fit for my own personal use, such as:
      - `<LDR>bt` does "fullscreen" a buffer, essentially just `:tab split` if `winr('$') != 1`
    - Visual Mode
      - `<LDR>j` twin mapping to `<LDR>j` in normal mode
+     - `<S-H>` to `^`
+     - `<S-L>` to `$`
    - Insert mode
      - Make `<C-e>`, `<C-y>`, `<C-d>`, and `<C-u>` accessible by binding them to `<esc><C-e/y/d/u>a`
 

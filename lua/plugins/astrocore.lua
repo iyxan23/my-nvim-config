@@ -70,6 +70,9 @@ return {
           "O<esc>o"
         },
 
+        ["<S-L>"] = { "$" },
+        ["<S-H>"] = { "^" },
+
         ["<Leader>j"] = {
           function() vim.cmd.HopLine() end,
           desc = "Hop Lines",
@@ -169,6 +172,9 @@ return {
           function() require("hop").hint_lines { extend_visual = true } end,
           desc = "Hop Lines",
         },
+
+        ["<S-L>"] = { "$" },
+        ["<S-H>"] = { "^" },
       },
       i = {
         ["<C-e>"] = { "<esc><C-e>a", desc = "Go down one line" },
