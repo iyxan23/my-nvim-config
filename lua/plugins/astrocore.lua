@@ -12,8 +12,8 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      autopairs = true, -- enable autopairs at start
-      cmp = true, -- enable completion at start
+      autopairs = true,     -- enable autopairs at start
+      cmp = true,           -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       notifications = true, -- enable notifications at start
     },
@@ -24,12 +24,12 @@ return {
     },
     -- vim options can be configured here
     options = {
-      opt = { -- vim.opt.<key>
+      opt = {                   -- vim.opt.<key>
         relativenumber = false, -- sets vim.opt.relativenumber
-        number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
-        signcolumn = "yes", -- sets vim.opt.signcolumn to auto
-        wrap = false, -- sets vim.opt.wrap
+        number = true,          -- sets vim.opt.number
+        spell = false,          -- sets vim.opt.spell
+        signcolumn = "yes",     -- sets vim.opt.signcolumn to auto
+        wrap = false,           -- sets vim.opt.wrap
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -67,7 +67,7 @@ return {
         --   desc = "Hop Lines",
         -- },
         ["<S-J>"] = {
-          "O<esc>o"
+          "O<esc>o",
         },
 
         ["<S-L>"] = { "$" },
@@ -181,6 +181,11 @@ return {
         ["<C-y>"] = { "<esc><C-y>a", desc = "Go up one line" },
         ["<C-d>"] = { "<esc><C-d>a", desc = "Go down half a screen" },
         ["<C-u>"] = { "<esc><C-u>a", desc = "Go up half a screen" },
+
+        ["<C-h>"] = { "<Left>" },
+        ["<C-j>"] = { "<Down>" },
+        ["<C-k>"] = { "<Up>" },
+        ["<C-l>"] = { "<Right>" },
       },
     },
   },

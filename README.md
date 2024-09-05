@@ -29,6 +29,7 @@ and mofified a few things to it to make it fit for my own personal use, such as:
      - `<S-L>` to `$`
    - Insert mode
      - Make `<C-e>`, `<C-y>`, `<C-d>`, and `<C-u>` accessible by binding them to `<esc><C-e/y/d/u>a`
+     - Movement with `<C-h>`, `<C-j>`, `<C-k>`, and `<C-l>` without going to normal mode
 
  - Make moving between windows in a terminal easier by allowing these mappings:
    - `<esc>` to `[[<C-\><C-n>]]`
