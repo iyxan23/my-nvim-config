@@ -2,7 +2,7 @@
 
 This config is built on top of [AstroNvim](https://github.com/AstroNvim/AstroNvim),
 with the [Lazy package manager](https://github.com/folke/lazy.nvim). I added
-and mofified a few things to it to make it fit for my own personal use, such as:
+and modified a few things to it to make it fit for my own personal use:
 
  - Global mappings
    - Normal Mode
