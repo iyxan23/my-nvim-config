@@ -35,6 +35,8 @@ and modified a few things to it to make it fit for my own personal use:
    - `<esc>` to `[[<C-\><C-n>]]`
    - `<C-h>`, `<C-j>`, `<C-k>`, and `<C-l>` to just work inside of it
 
+ - sets `vim.opt.showtabline = 0`, disables tabline by default
+
  - [`nvim-early-retirement`](https://github.com/chrisgrieser/nvim-early-retirement) to automatically close tabs that are unused
 
  - `catpuccin-mocha` as default theme
