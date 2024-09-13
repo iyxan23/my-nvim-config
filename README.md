@@ -10,6 +10,7 @@ and modified a few things to it to make it fit for my own personal use:
     - `<S-J>` to `O<esc>o`
     - `<S-H>` to `^`
     - `<S-L>` to `$`
+    - `<LDR>fW` to search only on open buffers, not the whole project
     - `<LDR>j` to `:HopLine` with hop.nvim
     - `<LDR>c` to close the current buffer, instead of AstroNvim's `<LDR>bc`
     - `<LDR>bc` to select a buffer to be closed, instead of AstroNvim's `<LDR>bC`

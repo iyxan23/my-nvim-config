@@ -71,6 +71,15 @@ return {
           "O<esc>o",
         },
 
+        ["<Leader>fW"] = {
+          function()
+            require("telescope.builtin").live_grep {
+              grep_open_files = true,
+            }
+          end,
+          desc = "Live-grep words in open buffers",
+        },
+
         ["<S-L>"] = { "$" },
         ["<S-H>"] = { "^" },
 
