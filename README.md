@@ -87,6 +87,12 @@ and modified a few things to it to make it fit for my own personal use:
   - Really quick and easy motion, substitute to `leap.nvim` when I need to
     jump into lines rather than individual words.
 
+- `kylechui/nvim-surround`
+
+  - Mapped everything `s` to be `m`, e.g. `ys` on normal mode becomes `ms`,
+    this is done to prevent clashing with the `leap.nvim` motion plugin that
+    already preoccupies the `s` key literally everywhere.
+
 - Heirline
 
   - Time on the bottom right corner for the status line
