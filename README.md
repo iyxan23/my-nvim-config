@@ -93,6 +93,9 @@ and modified a few things to it to make it fit for my own personal use:
     this is done to prevent clashing with the `leap.nvim` motion plugin that
     already preoccupies the `s` key literally everywhere.
 
+  - Re-mapped `<C-g>m` and `<C-g>M` on insert mode to be `<C-f>m` and `<C-f>M`
+    because `<C-g>` is alreadyauto  used by codeium auto completion.
+
 - Heirline
 
   - Time on the bottom right corner for the status line
