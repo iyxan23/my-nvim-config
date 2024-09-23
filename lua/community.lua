@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.json" },
   -- { import = "astrocommunity.pack.dart" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  -- { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   -- { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
