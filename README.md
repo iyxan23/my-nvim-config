@@ -44,6 +44,10 @@ and modified a few things to it to make it fit for my own personal use:
 
 - `catpuccin-mocha` as default theme
 
+- `nvim-telescope/telescope.nvim`
+
+  - Set `initial_mode` default to `normal`.
+
 - `AstroNvim/astrolsp`
 
   - Disabled inlay hints and autoformat because my laptop literally can't
