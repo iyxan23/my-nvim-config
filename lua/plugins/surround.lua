@@ -5,16 +5,16 @@ return {
   opts = {
     keymaps = {
       insert = "<C-f>,",
-      -- insert_line = "<C-f>,",
+      insert_line = false,
       normal = ",",
-      -- normal_cur = "mss",
-      -- normal_line = "mS",
-      -- normal_cur_line = "mSS",
+      normal_cur = false,
+      normal_line = false,
+      normal_cur_line = false,
       visual = ",",
-      -- visual_line = "g,",
+      visual_line = false,
       delete = "d,",
       change = "c,",
-      -- change_line = "cM",
+      change_line = false,
     },
   },
 }
