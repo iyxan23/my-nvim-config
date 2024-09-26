@@ -102,6 +102,9 @@ and modified a few things to it to make it fit for my own personal use:
     this is done to prevent clashing with the `leap.nvim` motion plugin that
     already preoccupies the `s` key literally everywhere.
 
+  - Important note: Used lowercase `m` instead of uppercase `M` (from the
+    regular `S`) for triggering `nvim-surround` whilst in visual mode.
+
   - Re-mapped `<C-g>m` and `<C-g>M` on insert mode to be `<C-f>m` and `<C-f>M`
     because `<C-g>` is already used by auto completion.
 
