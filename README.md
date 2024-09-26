@@ -98,15 +98,12 @@ and modified a few things to it to make it fit for my own personal use:
 
 - `kylechui/nvim-surround`
 
-  - Mapped everything `s` to be `m`, e.g. `ys` on normal mode becomes `ms`,
+  - Mapped everything `s` to be `,`, e.g. `ys` on normal mode becomes `,`,
     this is done to prevent clashing with the `leap.nvim` motion plugin that
     already preoccupies the `s` key literally everywhere.
 
-  - Important note: Used lowercase `m` instead of uppercase `M` (from the
-    regular `S`) for triggering `nvim-surround` whilst in visual mode.
-
-  - Re-mapped `<C-g>m` and `<C-g>M` on insert mode to be `<C-f>m` and `<C-f>M`
-    because `<C-g>` is already used by auto completion.
+  - Re-mapped `<C-g>,` on insert mode to be `<C-f>,` because `<C-g>` is already
+    used by auto completion.
 
 - Heirline
 
