@@ -91,11 +91,6 @@ and modified a few things to it to make it fit for my own personal use:
   - Really quick and easy motion, substitute to `leap.nvim` when I need to
     jump into lines rather than individual words.
 
-- `supermaven-inc/supermaven`
-
-  - A plugin that provides quick autocomplete, like codeium but faster and
-    also free.
-
 - `kylechui/nvim-surround`
 
   - Mapped everything `s` to be `,`, e.g. `ys` on normal mode becomes `,`,
@@ -120,6 +115,7 @@ and modified a few things to it to make it fit for my own personal use:
     { import = "astrocommunity.pack.rust" },
     { import = "astrocommunity.pack.typescript" },
     { import = "astrocommunity.pack.json" },
+    { import = "astrocommunity.completion.codeium-vim" },
     { import = "astrocommunity.quickfix.nvim-bqf" },
     { import = "astrocommunity.motion.nvim-spider" },
     { import = "astrocommunity.motion.portal-nvim" },
