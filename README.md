@@ -14,7 +14,7 @@ and modified a few things to it to make it fit for my own personal use:
     - `<LDR>j` to `:HopLine` with hop.nvim
     - `<LDR>c` to close the current buffer, instead of AstroNvim's `<LDR>bc`
     - `<LDR>bc` to select a buffer to be closed, instead of AstroNvim's `<LDR>bC`
-    - `<LDR>bC` to close every buffer except the current, instead of AstroNvim's `<LDR>bd`
+    - `<LDR>bC` to close every inactive buffers, instead of AstroNvim's `<LDR>bd`
     - `<LDR>tf` to create a floating terminal
     - `<LDR>th` to toggle the 1st terminal horizontally
     - `<LDR>tv` to toggle the 1st terminal vertically

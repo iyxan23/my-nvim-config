@@ -107,8 +107,15 @@ return {
           desc = "Close buffer from tabline",
         },
         ["<Leader>bC"] = {
-          function() require("astrocore.buffer").close_all(true) end,
-          desc = "Close all buffers except current",
+          function()
+            for _, bufnr in ipairs(vim.t.bufs) do
+              -- check if it's a buffer that doesn't have a window open
+              if vim.fn.empty(vim.fn.win_findbuf(bufnr)) == 1 then
+                require("astrocore.buffer").close(bufnr)
+              end
+            end
+          end,
+          desc = "Close all inactive buffers",
         },
         ["<Leader>bd"] = {},
 
