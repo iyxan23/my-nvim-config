@@ -2,7 +2,8 @@
 
 This config is built on top of [AstroNvim](https://github.com/AstroNvim/AstroNvim),
 with the [Lazy package manager](https://github.com/folke/lazy.nvim). I added
-and modified a few things to it to make it fit for my own personal use:
+and modified a few things to it to make it fit for my own personal use. Feel
+free to steal anything :)
 
 - Global mappings
 
@@ -99,6 +100,13 @@ and modified a few things to it to make it fit for my own personal use:
 
   - Re-mapped `<C-g>,` on insert mode to be `<C-f>,` because `<C-g>` is already
     used by auto completion.
+
+  - Changed how `t` surround works to use `emmet_language_server` to make it
+    possible to surround with emmet abbreviations. It does not work when emmet
+    is not running on the buffer you're on.
+
+    I might want to implement an else branch where it will restore to be the
+    default behavior when emmet is not running on the buffer.
 
 - Heirline
 
