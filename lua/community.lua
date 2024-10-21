@@ -21,5 +21,6 @@ return {
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.media.vim-wakatime" },
+  { import = "astrocommunity.split-and-window.mini-map" }
   -- import/override with your plugins folder
 }
