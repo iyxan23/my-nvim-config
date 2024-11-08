@@ -12,16 +12,16 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = false, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
+      autoformat = false,     -- enable or disable auto formatting on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = false,    -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = false, -- enable or disable format on save globally
+        enabled = false,    -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -45,7 +45,15 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      gopls = {
+        -- golang's language server
+        settings = {
+          gopls = {
+            gofumpt = true,                               -- we use gofumpt
+            buildFlags = { "-tags", "test,integration" }, -- to include `test`-tagged file when coding
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
