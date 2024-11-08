@@ -24,13 +24,14 @@ return {
     },
     -- vim options can be configured here
     options = {
-      opt = {                   -- vim.opt.<key>
-        relativenumber = false, -- sets vim.opt.relativenumber
-        number = true,          -- sets vim.opt.number
-        spell = false,          -- sets vim.opt.spell
-        signcolumn = "yes",     -- sets vim.opt.signcolumn to auto
-        wrap = false,           -- sets vim.opt.wrap
+      opt = { -- vim.opt.<key>
+        relativenumber = false,
+        number = true,
+        spell = false,
+        signcolumn = "yes",
+        wrap = false,
         showtabline = 0,
+        scrolloff = 10,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -110,9 +111,7 @@ return {
           function()
             for _, bufnr in ipairs(vim.t.bufs) do
               -- check if it's a buffer that doesn't have a window open
-              if vim.fn.empty(vim.fn.win_findbuf(bufnr)) == 1 then
-                require("astrocore.buffer").close(bufnr)
-              end
+              if vim.fn.empty(vim.fn.win_findbuf(bufnr)) == 1 then require("astrocore.buffer").close(bufnr) end
             end
           end,
           desc = "Close all inactive buffers",
