@@ -75,7 +75,7 @@ free to steal anything :)
 
 - `lukas-reineke/virt-column.nvim`
 
-  - Display a simple line on the 80th col
+  - Display a simple line on the 80th col on `BufEnter`
 
 - `xiyaowong/transparent.nvim`
 
@@ -115,6 +115,16 @@ free to steal anything :)
     appear pinned, but the implementation is kind of ugly, so I decided to
     leave it out.
 
+- Codeium
+
+  - Disabled codeium's default keybindings (`<Tab>` won't work). Use these
+    instead:
+
+    - `<C-g>` to accept autocompletion
+    - `<C-]>` to clear autocompletion
+    - `<M-[>` & `<M-]>` to cycle autocompletion
+    - `<M-\>` to trigger autocompletion
+
 - And the following community packages:
   ```lua
   return {
@@ -126,7 +136,6 @@ free to steal anything :)
     { import = "astrocommunity.completion.codeium-vim" },
     { import = "astrocommunity.quickfix.nvim-bqf" },
     { import = "astrocommunity.motion.nvim-spider" },
-    { import = "astrocommunity.motion.portal-nvim" },
     { import = "astrocommunity.motion.leap-nvim" },
     { import = "astrocommunity.colorscheme.catppuccin" },
     { import = "astrocommunity.media.vim-wakatime" },

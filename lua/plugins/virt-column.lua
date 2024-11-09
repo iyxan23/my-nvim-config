@@ -1,8 +1,8 @@
 return {
   "lukas-reineke/virt-column.nvim",
-  event = "BufRead",
+  event = "BufEnter",
   config = function()
-    vim.cmd("set colorcolumn=80")
-    require('virt-column').setup()
-  end
+    vim.cmd "set colorcolumn=80"
+    require("virt-column").setup()
+  end,
 }

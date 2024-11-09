@@ -17,10 +17,9 @@ return {
   { import = "astrocommunity.quickfix.nvim-bqf" },
   -- { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
-  { import = "astrocommunity.motion.portal-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.media.vim-wakatime" },
-  { import = "astrocommunity.split-and-window.mini-map" }
+  { import = "astrocommunity.split-and-window.mini-map" },
   -- import/override with your plugins folder
 }
