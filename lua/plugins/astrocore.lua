@@ -12,8 +12,8 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      autopairs = true,     -- enable autopairs at start
-      cmp = true,           -- enable completion at start
+      autopairs = true, -- enable autopairs at start
+      cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       notifications = true, -- enable notifications at start
     },
@@ -31,7 +31,11 @@ return {
         signcolumn = "yes",
         wrap = false,
         showtabline = 0,
-        scrolloff = 10,
+        scrolloff = 3,
+      },
+
+      g = {
+        neovide_transparency = 0.8,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -116,7 +120,24 @@ return {
           end,
           desc = "Close all inactive buffers",
         },
-        ["<Leader>bd"] = {},
+        ["<Leader>bd"] = nil,
+
+        ["<Leader>bz"] = {
+          desc = "Weird stuff",
+        },
+
+        ["<Leader>bzr"] = {
+          "<cmd>CellularAutomaton make_it_rain<cr>",
+          desc = "Make it rain!",
+        },
+        ["<Leader>bzg"] = {
+          "<cmd>CellularAutomaton game_of_life<cr>",
+          desc = "Game of life",
+        },
+        ["<Leader>bzs"] = {
+          "<cmd>CellularAutomaton scramble<cr>",
+          desc = "Scramble",
+        },
 
         ["<Leader>tf"] = {
           "<cmd>ToggleTerm 1 direction=float name=first<cr>",
