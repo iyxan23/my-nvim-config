@@ -1,8 +1,13 @@
 # iyxan's nvim config
 
-This config is built on top of [AstroNvim](https://github.com/AstroNvim/AstroNvim),
-with the [Lazy package manager](https://github.com/folke/lazy.nvim). I added
-and modified a few things to it to make it fit for my own personal use. Feel
+![screenshot](https://github.com/user-attachments/assets/ba041ec8-a07b-44b4-8a79-322c32bccc3a)
+
+![another screenshot](https://github.com/user-attachments/assets/c14c42c6-1c72-48f7-a0a1-1f0a502ba0a9)
+
+This is the config I use as my main code editor. It's built on top of
+[AstroNvim](https://github.com/AstroNvim/AstroNvim), with the
+[Lazy package manager](https://github.com/folke/lazy.nvim). I added and
+modified a few things to it to make it fit for my own personal use. Feel
 free to steal anything :)
 
 - Global mappings
