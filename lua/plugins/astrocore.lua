@@ -89,8 +89,12 @@ return {
         ["<S-H>"] = { "^" },
 
         ["<Leader>j"] = {
-          function() vim.cmd.HopLine() end,
-          desc = "Hop Lines",
+          "<cmd>HopLineStart<cr>",
+          desc = "Hop start lines",
+        },
+        ["<Leader>J"] = {
+          "<cmd>HopLine<cr>",
+          desc = "Hop lines",
         },
 
         ["<Leader>c"] = {
@@ -206,8 +210,12 @@ return {
         --   desc = "Hop Lines",
         -- },
         ["<Leader>j"] = {
-          function() require("hop").hint_lines { extend_visual = true } end,
-          desc = "Hop Lines",
+          "<cmd>HopLineStart<cr>",
+          desc = "Hop start lines",
+        },
+        ["<Leader>J"] = {
+          "<cmd>HopLine<cr>",
+          desc = "Hop lines",
         },
 
         ["<S-L>"] = { "$" },

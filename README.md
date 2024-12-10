@@ -17,7 +17,8 @@ free to steal anything :)
     - `<S-H>` to `^`
     - `<S-L>` to `$`
     - `<LDR>fW` to search only on open buffers, not the whole project
-    - `<LDR>j` to `:HopLine` with hop.nvim
+    - `<LDR>j` to `:HopLineStart` with hop.nvim
+    - `<LDR>J` to `:HopLine` with hop.nvim
     - `<LDR>c` to close the current buffer, instead of AstroNvim's `<LDR>bc`
     - `<LDR>bc` to select a buffer to be closed, instead of AstroNvim's `<LDR>bC`
     - `<LDR>bC` to close every inactive buffers, instead of AstroNvim's `<LDR>bd`
