@@ -87,6 +87,8 @@ free to steal anything :)
   - `:TransparentEnable`
   - `:TransparentDisable`
   - `:TransparentToggle`
+  - Excluded `CursorLine` group from being transparent. I've been having a hard
+    time locating where my cursor is placed.
 
 - `folke/drop.nvim`
 
