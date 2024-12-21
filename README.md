@@ -100,6 +100,13 @@ free to steal anything :)
   - Really quick and easy motion, substitute to `leap.nvim` when I need to
     jump into lines rather than individual words.
 
+- `mason-nvim-dap`
+
+  - Configured debuggers for `go` (`delve`):
+
+    - Configured the debug runners to also include build flags of the specific
+      build tags that I use: `test,integration`.
+
 - `kylechui/nvim-surround`
 
   - Mapped everything `s` to be `,`, e.g. `ys` on normal mode becomes `,`,
