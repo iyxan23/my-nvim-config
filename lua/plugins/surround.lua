@@ -26,7 +26,7 @@ return {
           if input then
             --- hat_tip to https://github.com/b0o/nvim-conf/blob/363e126f6ae3dff5f190680841e790467a00124d/lua/user/util/wrap.lua#L12
             local bufnr = 0
-            local client = unpack(vim.lsp.get_active_clients { bufnr = bufnr, name = "emmet_language_server" })
+            local client = unpack(vim.lsp.get_clients { bufnr = bufnr, name = "emmet_language_server" })
             if client then
               local splitter = "BENNYSPECIALSECRETSTRING"
               local response = client.request_sync("emmet/expandAbbreviation", {
