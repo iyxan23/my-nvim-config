@@ -125,6 +125,10 @@ free to steal anything :)
     I might want to implement an else branch where it will restore to be the
     default behavior when emmet is not running on the buffer.
 
+  - Added `e` surround keymap to surround a react fragment. e.g. `,e` on visual
+    will surround the selected text with a react fragment (`<></>`). Other
+    modifier keymaps like `d,e`, `c,e` also work as usual.
+
 - Heirline
 
   - Time on the bottom right corner for the status line

@@ -17,6 +17,17 @@ return {
       change_line = false,
     },
     surrounds = {
+      -- react fragment
+      ["e"] = {
+        add = { "<>", "</>" },
+        find = function() return require("nvim-surround.config").get_selection { pattern = "<()>.-()</>" } end,
+        delete = "^(<>)().-(</>)()$",
+        change = {
+          target = "^<>()().-()</>$",
+          replacement = function() return { { "<>" }, { "</>" } } end,
+        },
+      },
+
       -- thanks: https://github.com/kylechui/nvim-surround/discussions/53#discussioncomment-10070567
       ["t"] = {
         -- add = wrap_with_abbreviation,
