@@ -113,8 +113,10 @@ free to steal anything :)
     this is done to prevent clashing with the `leap.nvim` motion plugin that
     already preoccupies the `s` key literally everywhere.
 
-  - Re-mapped `<C-g>,` on insert mode to be `<C-f>,` because `<C-g>` is already
-    used by auto completion.
+  - Removed the following surround keymaps: `insert`, `insert_line`,
+    `normal_cur`, `normal_line`, `normal_cur_line`, `visual_line`, and
+    `change_line`. Because I personally don't see myself using any of these
+    keymaps.
 
   - Changed how `t` surround works to use `emmet_language_server` to make it
     possible to surround with emmet abbreviations. It does not work when emmet

@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     keymaps = {
-      insert = "<C-f>,",
+      insert = false,
       insert_line = false,
       normal = ",",
       normal_cur = false,
