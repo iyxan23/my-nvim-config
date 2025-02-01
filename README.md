@@ -39,6 +39,7 @@ free to steal anything :)
   - Insert mode
     - Make `<C-e>`, `<C-y>`, `<C-d>`, and `<C-u>` accessible by binding them to `<esc><C-e/y/d/u>a`
     - Movement with `<C-h>`, `<C-j>`, `<C-k>`, and `<C-l>` without going to normal mode
+    - Mapped the unused `<C-b>` shortcut to `<esc>lgU i` (capitalize the next character while staying in insert mode)
 
 - Make moving between windows in a terminal easier by allowing these mappings:
 

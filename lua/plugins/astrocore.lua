@@ -231,6 +231,11 @@ return {
         ["<C-j>"] = { "<Down>" },
         ["<C-k>"] = { "<Up>" },
         ["<C-l>"] = { "<Right>" },
+
+        ["<C-b>"] = {
+          "<esc>lgU i",
+          desc = "Capitalize the next character without leaving insert mode",
+        },
       },
     },
   },
