@@ -28,6 +28,16 @@ return {
         },
       },
 
+      -- js template literal string escape
+      ["j"] = {
+        add = { "${", "}" },
+        find = "${[%w_]+}",
+        delete = "^(%${)().-()(%})$",
+        change = {
+          target = "^%${().-()%}$",
+        },
+      },
+
       -- thanks: https://github.com/kylechui/nvim-surround/discussions/53#discussioncomment-10070567
       ["t"] = {
         -- add = wrap_with_abbreviation,

@@ -129,6 +129,24 @@ free to steal anything :)
     will surround the selected text with a react fragment (`<></>`). Other
     modifier keymaps like `d,e`, `c,e` also work as usual.
 
+  - Added `j` surround keymap to surround an escape inside a javascript
+    template literal. e.g:
+
+    > `|` is the caret
+
+    ```
+    console.log(`hello |user.name`)
+    ```
+
+    Do `,2ej` and it'll be:
+
+    ```
+    console.log(`hello |${user.name}`)
+    ```
+
+    I currently have only implemented adding the surrounds, but not editing or
+    deleting them yet.
+
 - Heirline
 
   - Time on the bottom right corner for the status line
