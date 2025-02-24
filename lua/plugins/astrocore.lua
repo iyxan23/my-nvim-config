@@ -25,7 +25,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = false,
+        relativenumber = true,
         number = true,
         spell = false,
         signcolumn = "yes",
