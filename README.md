@@ -179,6 +179,8 @@ free to steal anything :)
     { import = "astrocommunity.motion.leap-nvim" },
     { import = "astrocommunity.colorscheme.catppuccin" },
     { import = "astrocommunity.media.vim-wakatime" },
+    { import = "astrocommunity.split-and-window.mini-map" },
+    { import = "astrocommunity.markdown-and-latex.vimtex" },
   }
   ```
 
