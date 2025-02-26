@@ -12,6 +12,8 @@ free to steal anything :)
 
 - Global mappings
 
+  Local leader set to `;` (previously `,`).
+
   - Normal Mode
     - `<S-J>` to `O<esc>o`
     - `<S-H>` to `^`
