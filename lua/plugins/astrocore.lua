@@ -36,6 +36,7 @@ return {
 
       g = {
         neovide_transparency = 0.8,
+        vimtex_view_method = "zathura",
       },
     },
     -- Mappings can be configured through AstroCore as well.
