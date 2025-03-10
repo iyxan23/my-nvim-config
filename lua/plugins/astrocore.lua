@@ -233,8 +233,8 @@ return {
         ["<C-l>"] = { "<Right>" },
 
         ["<C-b>"] = {
-          "<esc>lgU i",
-          desc = "Capitalize the next character without leaving insert mode",
+          "<C-o>~<Left>",
+          desc = "Flip the next character's case without leaving insert mode",
         },
       },
     },
