@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- AstroCore configuration for AstroNvim v5
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -14,7 +14,7 @@ return {
     features = {
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- new format for diagnostics configuration
       notifications = true, -- enable notifications at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
@@ -102,7 +102,7 @@ return {
           function()
             local bufs = vim.fn.getbufinfo { buflisted = 1 }
             require("astrocore.buffer").close(vim.api.nvim_get_current_buf())
-            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+            if require("astrocore").is_available "snacks.nvim" and not bufs[2] then require("snacks.dashboard").open() end
           end,
           desc = "Close buffer",
         },
@@ -111,7 +111,7 @@ return {
             require("astroui.status.heirline").buffer_picker(function(bufnr)
               local bufs = vim.fn.getbufinfo { buflisted = 1 }
               require("astrocore.buffer").close(bufnr)
-              if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+              if require("astrocore").is_available "snacks.nvim" and not bufs[2] then require("snacks.dashboard").open() end
             end)
           end,
           desc = "Close buffer from tabline",
@@ -196,6 +196,8 @@ return {
           "<cmd>if winnr('$') != 1 <Bar> tab split <Bar> endif<CR>",
           desc = "Something like a fullscreen mode",
         },
+
+        ["<C-c>"] = { "xi<Enter><Esc>" },
       },
       t = {
         -- setting a mapping to false will disable it

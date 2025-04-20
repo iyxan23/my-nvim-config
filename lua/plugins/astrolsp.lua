@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- AstroLSP configuration for AstroNvim v5
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -16,6 +16,15 @@ return {
       codelens = true,        -- enable/disable codelens refresh on start
       inlay_hints = false,    -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
+    },
+    -- new defaults table for hover and signature help configuration
+    defaults = {
+      hover = {
+        -- hover configuration
+      },
+      signature_help = {
+        -- signature help configuration
+      },
     },
     -- customize lsp formatting options
     formatting = {

@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- AstroCommunity imports for AstroNvim v5
 
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
@@ -15,7 +15,8 @@ return {
   -- { import = "astrocommunity.pack.dart" },
   { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
-  -- { import = "astrocommunity.utility.mason-tool-installer-nvim" },
+  { import = "astrocommunity.utility.mason-tool-installer-nvim" },
+  { import = "astrocommunity.fuzzy-finder.telescope-nvim" },
   { import = "astrocommunity.motion.nvim-spider" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },

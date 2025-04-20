@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- AstroUI configuration for AstroNvim v5
 
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
@@ -19,6 +19,34 @@ return {
       },
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+      },
+    },
+    -- configure the new folding module
+    folding = {
+      -- enable the folding module
+      enabled = true,
+      -- configure which folding methods to use
+      methods = {
+        treesitter = true, -- use treesitter based folding
+        indent = true,     -- use indent based folding as fallback
+        lsp = true,        -- use lsp folding (Neovim v0.11+ only)
+      },
+    },
+    -- configure status providers and components
+    status = {
+      providers = {
+        lsp_client_names = {
+          mappings = {
+            -- display `lua_ls` as just `LUA` in the statusline
+            lua_ls = "LUA",
+            -- display `tsserver` as just `TS` in the statusline
+            tsserver = "TS",
+            -- display `gopls` as just `GO` in the statusline
+            gopls = "GO",
+            -- display `rust_analyzer` as just `RS` in the statusline
+            rust_analyzer = "RS",
+          },
+        },
       },
     },
     -- Icons can be configured throughout the interface
