@@ -9,7 +9,6 @@ return {
       "lua-language-server",
       "gopls",
       "rust-analyzer",
-      "typescript-language-server",
 
       -- Formatters/Linters (from mason-null-ls)
       "prettierd",
