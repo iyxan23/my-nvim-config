@@ -3,6 +3,7 @@ return {
   "folke/snacks.nvim",
   opts = {
     dashboard = {
+      enabled = true,
       preset = {
         keys = {
           { icon = " ", key = ".", desc = "This Session", action = ":lua require('resession').load(vim.fn.getcwd(), { dir = 'dirsession' })" },
@@ -37,7 +38,9 @@ return {
     -- Configure other snacks modules that replace previous plugins
     picker = {
       -- telescope.nvim replacement configuration
+      enabled = true,
       initial_mode = "normal",
+      ui_select = true,
     },
 
     notify = {
