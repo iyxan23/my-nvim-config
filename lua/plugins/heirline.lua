@@ -39,8 +39,13 @@ return {
             end
           end),
         },
-        hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
-        surround = { separator = "right", color = status.hl.mode_bg }, -- background highlight based on mode
+        hl = function()
+          return require("astroui.status.hl").get_attributes "mode" -- highlight based on mode attributes
+        end,
+        surround = {
+          separator = "right",
+          color = function() return require("astroui.status.hl").mode_bg() end,
+        }, -- background highlight based on mode
       },
     }
 
