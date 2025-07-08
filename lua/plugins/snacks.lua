@@ -39,8 +39,8 @@ return {
     picker = {
       -- telescope.nvim replacement configuration
       enabled = true,
-      initial_mode = "normal",
       ui_select = true,
+      focus = "list",
     },
 
     notify = {
